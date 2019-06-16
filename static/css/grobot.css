@@ -1,0 +1,7 @@
+.btn:focus {
+  outline: none;
+}
+
+.top-buffer { 
+  margin-top:20px;
+}

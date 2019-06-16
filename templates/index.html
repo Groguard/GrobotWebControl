@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Grobot Control</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/grobot.css') }}">
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                $('.usable').click(
+                    function() {  
+                        $.getJSON('/actions', {action: this.id});
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="section">
+            <div class="container">
+                <div class="row top-buffer">
+                    <div class="col-md-6 col-xs-6 text-center">
+                        <a id="forward" class="btn btn-primary usable"><i class="fa fa-chevron-up fa-3x"></i></a></div>
+                    <div class="col-md-6 col-xs-6 text-center">
+                        <a class="btn btn-primary usable"><i class="fa fa-upload fa-3x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row top-buffer">
+                    <div class="col-md-3 col-xs-3 text-center">
+                        <a id="turn_left" class="btn btn-primary usable"><i class="fa fa-chevron-left fa-3x"></i></a>
+                    </div>
+                    <div class="col-md-3 col-xs-3 text-center">
+                        <a id="turn_right" class="btn btn-primary usable"><i class="fa fa-chevron-right fa-3x"></i></a>
+                    </div>
+                    <div class="col-md-3 col-xs-3 text-center">
+                        <a id="rotate_left" class="btn btn-primary usable"><i class="fa fa-rotate-left fa-3x"></i></a>
+                    </div>
+                    <div class="col-md-3 col-xs-3 text-center">
+                        <a id="rotate_right" class="btn btn-primary usable"><i class="fa fa-rotate-right fa-3x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row top-buffer">
+                    <div class="col-md-6 col-xs-6 text-center">
+                        <a id="reverse" class="btn btn-primary usable"><i class="fa fa-chevron-down fa-3x"></i></a>
+                    </div>
+                    <div class="col-md-6 col-xs-6 text-center">
+                        <a class="btn btn-primary usable"><i class="fa fa-download fa-3x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row top-buffer">
+                    <div class="col-md-6 col-xs-6">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a id="stand_up" class="btn btn-primary btn-block usable">Stand Up</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a id="enable_servos" class="btn btn-primary btn-block usable">Servos On</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a id="wave" class="btn btn-primary btn-block usable">Wave</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a id="sit" class="btn btn-primary btn-block usable">Sit Down</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a id="disable_servos" class="btn btn-primary btn-block usable">Servos Off</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a id="poweroff" class="btn btn-primary btn-block usable">Shutdown</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
